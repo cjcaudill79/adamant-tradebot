@@ -301,9 +301,9 @@ try {
 
   config.isDemoAccount = config.isDemoAccount ?? process.env.OVERRIDE_CONFIG_FUNDS === 'demo';
 
-  const pair = config.pair.toUpperCase();
+  const pair = config.pair?.toUpperCase() || '';
 
-  if (!pair?.includes('/')) {
+  if (!pair || !pair.includes('/')) {
     exit(`Bot's config is wrong. Spot trading pair is incorrect: ${config.pair}.`);
   }
 

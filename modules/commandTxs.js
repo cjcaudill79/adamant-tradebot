@@ -699,7 +699,7 @@ async function enable(params, _, isWebApi = false) {
         }
 
         if (
-          pairObj.pair.toUpperCase() === config.pair.toUpperCase() &&
+          pairObj.pair.toUpperCase() === config.pair?.toUpperCase() &&
           exchange.toLowerCase() === config.exchange.toLowerCase()
         ) {
           return {

@@ -822,12 +822,12 @@ module.exports = (
  * @returns {Object|Boolean} pair, pairReadable, pairPlain, coin1, coin2
 */
 function formatPairName(pair) {
-  pair = pair.toUpperCase();
+  pair = pair?.toUpperCase() || "";
 
   if (pair.indexOf('-') > -1) {
-    pair = pair.replace('-', '/').toUpperCase();
+    pair = (pair || "").replace("-", "/").toUpperCase();
   } else if (pair.indexOf('_') !== -1) {
-    pair = pair.replace('_', '/').toUpperCase();
+    pair = (pair || "").replace("-", "/").toUpperCase();
   }
 
   const [coin1, coin2] = pair.split('/');
